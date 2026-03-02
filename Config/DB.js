@@ -11,7 +11,8 @@ const sequelize = new Sequelize(
     }
 );
 
-try{
+const connectDB = async () => {
+    try{
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
@@ -21,6 +22,8 @@ try{
         }
 }catch(error){
     console.error('Unable to connect to the database:', error);
+    process.exit(1);
 }
+};
 
-module.exports = sequelize;
+module.exports = { sequelize, connectDB };
