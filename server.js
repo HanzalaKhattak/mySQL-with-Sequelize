@@ -21,7 +21,7 @@ app.use('/api/users', userRoutes);
 const startServer = async () => {
     await initializeDB();
     app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.log(`Server is running on port "http://localhost:${PORT}"`);
     });
 };
 
